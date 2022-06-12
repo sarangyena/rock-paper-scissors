@@ -2,8 +2,10 @@ function computerPlay(){
     const pick=["Rock","Paper","Scissors"];
     let random=0;
     random=Math.floor(Math.random()*3);
+   return pick[random];
 }
 function playRound(player,computer){
+    console.log(player);
     if(player.charAt(0)=='r'||'R'){
         if(computer.charAt(0)=='R'){
             console.log("It's a tie! Both of you played Rock!");
@@ -34,11 +36,12 @@ function playRound(player,computer){
 }
 function game(){
     for (let i=0; i<5; i++){
+        const player=prompt("Enter your pick: ");
+        const computer=computerPlay();
         playRound(player,computer);
         console.log(computer);
     }
 }
-const player="rock";
-const computer=computerPlay();
+    
 game();
 
